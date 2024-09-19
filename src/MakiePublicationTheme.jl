@@ -1,5 +1,9 @@
 module MakiePublicationTheme
 
-# Write your package code here.
+using Makie
+
+include("publication_theme.jl")
+
+export publication_theme
 
 end
