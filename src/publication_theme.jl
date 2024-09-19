@@ -1,3 +1,10 @@
+function filter_background_color!(colormap::AbstractArray{<:Makie.Colors.RGBA}; threshold=0.93f0)
+    filtered_colormap = filter!(colormap) do color
+        !(color.r > threshold && color.g > threshold && color.b > threshold)
+    end
+    return filtered_colormap
+end
+
 function publication_theme()
     latextheme = theme_latexfonts()
     tickwidth = 0.8f0
@@ -6,6 +13,8 @@ function publication_theme()
       size = (500.0, 250.0),
         fontsize=10,
         colormap=:batlow,
+        palette = (color = filter_background_color!(Makie.to_colormap(:grayCS)),
+                   patchcolor = Makie.to_colormap(:batlowKS)),
         linewidth=1.0f0,
         rowgap=12.0f0,
         colgap=12.0f0,
@@ -54,7 +63,11 @@ function publication_theme()
               framewidth = tickwidth,
              ),
         Lines = (
-            cycle = Cycle([:linestyle], covary=true),
+            cycle = Cycle([:linestyle, :color], covary=true),
+           ),
+        Scatter = (
+            cycle = Cycle([:marker, :color], covary=true),
+            markersize = 6.0f0,
            ),
        )
     return latextheme
