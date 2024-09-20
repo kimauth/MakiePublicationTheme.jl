@@ -31,9 +31,12 @@ update_theme!(fontsize=11) # use fontsize 11 instead of the default fontsize 10 
 
 size_cm = (12.0, 8.0)
 dpi = 300
+# size and px_per_unit will be used for setting correct sizes
 size, px_per_unit = size_pixelgraphic(size_cm, dpi)
 
+# set canvas size according to computed size
 f = Figure(; size)
+
 # fill the figure with a few things with font sizes
 ax = Axis(f[1,1];
     xlabel = "xlabel in fontsize 11",
