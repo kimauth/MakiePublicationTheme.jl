@@ -56,5 +56,5 @@ end
 
 with_theme(publication_theme()) do
     f = demofigure()
-    save("../assets/makie_demofigure.svg", f)
+    save("../assets/makie_demofigure.png", f)
 end
