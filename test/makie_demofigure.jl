@@ -3,8 +3,9 @@ using Random
 
 function demofigure()
     Random.seed!(2)
-
-    f = Figure()
+    
+    size = (600, 450) # use Makie default figure size instead of theme figure size
+    f = Figure(; size)
     ax = Axis(f[1, 1],
         title = "measurements",
         xlabel = "time (s)",

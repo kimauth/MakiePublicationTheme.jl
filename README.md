@@ -61,9 +61,8 @@ The `publication_theme()` can be updated like any other Makie theme. For example
 using MakiePublicationTheme
 using CairoMakie, Random # needed for demofigure
 
-update_theme!(publication_theme();
-    palette = (color = Makie.to_colormap(:batlowKS),),
-    )
+set_theme!(publication_theme())
+update_theme!(palette = (color = Makie.to_colormap(:batlowKS),))
 
 f = demofigure()
 ```
