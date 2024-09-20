@@ -53,3 +53,19 @@ text!(ax, 3π/4, cos(3π/4); text="cos", align=(:right, :top), cycle, fontsize=1
 save("my_12x8cm_figure.png", f; px_per_unit)
 ```
 <img src="assets/my_12x8cm_figure.png" alt="Demofigure for figure and font sizes" width="454"/>
+Now the figure will have resolution of 300dpi when displayed at 12cm x 8cm. The font sizes then correspond to 11pt on the diagram axes and 16pt for the text labels in the figure.
+
+# Adapting the theme
+The `publication_theme()` can be updated like any other Makie theme. For example changing the color palette that applies to line plots is done as follows:
+```julia
+using MakiePublicationTheme
+using CairoMakie, Random # needed for demofigure
+
+update_theme!(publication_theme();
+    palette = (color = Makie.to_colormap(:batlowKS),),
+    )
+
+f = demofigure()
+```
+![Makie-theme-demofigure for publication theme with updated color palette](/assets/makie_demofigure2.png)
+
