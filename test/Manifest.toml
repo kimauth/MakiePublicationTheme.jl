@@ -2,7 +2,7 @@
 
 julia_version = "1.10.2"
 manifest_format = "2.0"
-project_hash = "bf21bba6752422548d9fde2cc5dc1b77d285b19d"
+project_hash = "41f116f1de1abfd7beeef671cf42485eb627aec9"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -727,12 +727,6 @@ deps = ["ColorTypes", "GeometryBasics", "IntervalSets", "Observables"]
 git-tree-sha1 = "22fed09860ca73537a36d4e5a9bce0d9e80ee8a8"
 uuid = "20f20a25-4f0e-4fdf-b5d1-57303727442b"
 version = "0.8.8"
-
-[[deps.MakiePublicationTheme]]
-deps = ["Makie"]
-path = ".."
-uuid = "3fbbcf8b-4a17-4fd7-8dae-ebb2ecac0782"
-version = "1.0.0-DEV"
 
 [[deps.MappedArrays]]
 git-tree-sha1 = "2dab0221fe2b0f2cb6754eaa743cc266339f527e"

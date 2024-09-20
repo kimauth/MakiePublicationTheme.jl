@@ -2,5 +2,5 @@ using MakiePublicationTheme
 using Test
 
 @testset "MakiePublicationTheme.jl" begin
-    # Write your tests here.
+    include("makie_demofigure.jl")
 end
