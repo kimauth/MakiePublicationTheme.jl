@@ -33,21 +33,19 @@ size_cm = (12.0, 8.0)
 dpi = 300
 size, px_per_unit = size_pixelgraphic(size_cm, dpi)
 
-# generate figure with correct canvas size
 f = Figure(; size)
 
 # fill the figure with a few things with font sizes
 ax = Axis(f[1,1];
+  limits = (-0.5, 1.0, 0.0, 1.5),
     xlabel = "xlabel in fontsize 11",
     ylabel = "ylabel in fontsize 11",
     title = "My 12cm x 8cm figure",
-    xticks = MultiplesTicks(5, π, "π"),
     )
-lines!(ax, 0.0:0.1:3π, sin)
-lines!(ax, 0.0:0.1:3π, cos)
-cycle = (color=:color) # cycle over (lineplot) colors instead of inheriting :textcolor
-text!(ax, 3π/4, sin(3π/4); text="sin", align=(:left, :bottom), cycle, fontsize=16)
-text!(ax, 3π/4, cos(3π/4); text="cos", align=(:right, :top), cycle, fontsize=16)
+fontsizes = 8:2:16
+for (i, fontsize) in enumerate(fontsizes)
+    text!(ax, 0, -i*0.25+1.5; text="Fontsize $fontsize", fontsize)
+end
 
 # save figure that will have a resolution of 300dpi at 12cm x 8cm size
 save("my_12x8cm_figure.png", f; px_per_unit)
