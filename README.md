@@ -7,4 +7,4 @@
 My favourite settings for publication quality [`Makie.jl`](https://docs.makie.org/) plots.
 This theme is for example used in [Auth et. al., 2024](https://doi.org/10.1016/j.euromechsol.2024.105418).
 
-![Makie-theme-demofigure for publication theme](/assets/makie_demofigure.svg)
+![Makie-theme-demofigure for publication theme](/assets/makie_demofigure.png)
