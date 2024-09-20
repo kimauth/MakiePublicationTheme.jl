@@ -52,4 +52,4 @@ text!(ax, 3π/4, cos(3π/4); text="cos", align=(:right, :top), cycle, fontsize=1
 # save figure that will have a resolution of 300dpi at 12cm x 8cm size
 save("my_12x8cm_figure.png", f; px_per_unit)
 ```
-<img src="assets/my_12x8cm_figure.png" alt="Demofigure for figure and font sizes" width="340"/>
+<img src="assets/my_12x8cm_figure.png" alt="Demofigure for figure and font sizes" width="454"/>
